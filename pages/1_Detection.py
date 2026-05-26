@@ -51,7 +51,7 @@ if uploaded:
 
     st.divider()
 
-    st.subheader('📋 Recommended Actions')
+    st.subheader('Recommended Actions')
 
     if recommendation['urgency'] == 'high':
         st.error(f"⚠️ {recommendation['summary']}")
@@ -71,7 +71,7 @@ if uploaded:
 
     st.divider()
 
-st.subheader('📖 Visual Reference Guide')
+st.subheader('Visual Reference Guide')
 st.caption('Use these examples to understand what to look for before uploading your photo')
 
 ref_col1, ref_col2 = st.columns(2)
