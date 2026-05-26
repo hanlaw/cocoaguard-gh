@@ -1,10 +1,10 @@
 import streamlit as st
 
-st.title('🌍 About CocoaGuard GH')
+st.title('About CocoaGuard GH')
 
 st.divider()
 
-st.subheader('🔬 Understanding CSSVD')
+st.subheader('Understanding CSSVD')
 
 col1, col2 = st.columns(2)
 
