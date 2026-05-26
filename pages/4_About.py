@@ -10,14 +10,14 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.image(
-        'assets/sample_healthy.jpg',
+        'assets/sample_healthy.jpeg',
         caption='Healthy Cocoa Plant',
         use_column_width=True
     )
 
 with col2:
     st.image(
-        'assets/sample_cssvd.jpg',
+        'assets/sample_cssvd.jpeg',
         caption='CSSVD Infected Plant',
         use_column_width=True
     )
