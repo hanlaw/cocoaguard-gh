@@ -6,7 +6,7 @@ st.set_page_config(
     layout='centered'
 )
 
-st.title('🌿 CocoaGuard GH')
+st.title('CocoaGuard GH')
 st.caption('CSSVD Early Detection — Powered by Sankofa Intelligence')
 st.divider()
 
