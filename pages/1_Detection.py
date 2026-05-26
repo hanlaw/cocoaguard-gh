@@ -7,7 +7,7 @@ from utils.predictor import predict
 from utils.recommendations import get_recommendation
 from utils.charts import confidence_bar_chart
 
-st.title('🌿 CSSVD Detection')
+st.title('CSSVD Detection')
 st.caption('Upload a photo to receive an instant AI diagnosis')
 st.divider()
 
