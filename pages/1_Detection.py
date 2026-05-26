@@ -7,21 +7,12 @@ from utils.predictor import predict
 from utils.recommendations import get_recommendation
 from utils.charts import confidence_bar_chart
 
-
-# ==========================================
-# PAGE CONFIGURATION
-# ==========================================
-
 st.set_page_config(
     page_title='CSSVD Detection System',
     page_icon='🌿',
     layout='wide'
 )
 
-
-# ==========================================
-# CUSTOM STYLING
-# ==========================================
 
 st.markdown("""
 <style>
@@ -43,12 +34,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
-# ==========================================
-# PAGE HEADER
-# ==========================================
-
-st.title('🌿 CSSVD Detection')
+st.title('CSSVD Detection')
 
 st.caption(
     'Upload or capture a photo to receive an instant AI diagnosis'
@@ -56,17 +42,7 @@ st.caption(
 
 st.divider()
 
-
-# ==========================================
-# LOAD MODEL
-# ==========================================
-
 model = load_model()
-
-
-# ==========================================
-# IMAGE INPUT SECTION
-# ==========================================
 
 st.subheader('📸 Select Image Source')
 
@@ -76,20 +52,11 @@ st.info(
 
 image = None
 
-
-# ------------------------------------------
-# TABS
-# ------------------------------------------
-
 tab1, tab2 = st.tabs([
     '📁 Upload Image',
     '📷 Use Camera'
 ])
 
-
-# ==========================================
-# TAB 1 — FILE UPLOAD
-# ==========================================
 
 with tab1:
 
@@ -104,10 +71,6 @@ with tab1:
         image = Image.open(uploaded)
 
 
-# ==========================================
-# TAB 2 — CAMERA INPUT
-# ==========================================
-
 with tab2:
 
     camera_photo = st.camera_input(
@@ -120,19 +83,12 @@ with tab2:
         image = Image.open(camera_photo)
 
 
-# ==========================================
-# IMAGE PROCESSING + PREDICTION
-# ==========================================
-
 if image:
 
     st.divider()
 
     col1, col2 = st.columns(2)
 
-    # --------------------------------------
-    # IMAGE DISPLAY
-    # --------------------------------------
 
     with col1:
 
@@ -142,11 +98,8 @@ if image:
             use_container_width=True
         )
 
-    # --------------------------------------
-    # AI PROCESSING
-    # --------------------------------------
 
-    with st.spinner('🧠 Analysing image using AI model...'):
+    with st.spinner('Analysing image using AI model...'):
 
         processed = preprocess_image(image)
 
@@ -159,13 +112,10 @@ if image:
             result['predicted_class']
         )
 
-    # --------------------------------------
-    # PREDICTION RESULTS
-    # --------------------------------------
 
     with col2:
 
-        st.subheader('🔍 Diagnosis Result')
+        st.subheader('Diagnosis Result')
 
         if result['predicted_class'] == 'healthy':
 
@@ -180,7 +130,7 @@ if image:
             value=f"{result['confidence']:.1f}%"
         )
 
-        st.markdown('### 📊 Prediction Confidence')
+        st.markdown('### Prediction Confidence')
 
         fig = confidence_bar_chart(
             result['cssvd_probability'],
@@ -192,13 +142,10 @@ if image:
             use_container_width=True
         )
 
-    # ======================================
-    # RECOMMENDATIONS SECTION
-    # ======================================
 
     st.divider()
 
-    st.subheader('📋 Recommended Actions')
+    st.subheader('Recommended Actions')
 
     if recommendation['urgency'] == 'high':
 
@@ -218,10 +165,6 @@ if image:
 
         st.markdown(f"- {action}")
 
-    # ======================================
-    # DISCLAIMER
-    # ======================================
-
     st.divider()
 
     st.caption(
@@ -231,13 +174,9 @@ if image:
     )
 
 
-# ==========================================
-# VISUAL REFERENCE GUIDE
-# ==========================================
-
 st.divider()
 
-st.subheader('📖 Visual Reference Guide')
+st.subheader('Visual Reference Guide')
 
 st.caption(
     'Use these examples to understand symptoms before uploading your image.'
@@ -245,10 +184,6 @@ st.caption(
 
 ref_col1, ref_col2 = st.columns(2)
 
-
-# ------------------------------------------
-# HEALTHY SAMPLE
-# ------------------------------------------
 
 with ref_col1:
 
@@ -261,11 +196,6 @@ with ref_col1:
         ),
         use_container_width=True
     )
-
-
-# ------------------------------------------
-# CSSVD SAMPLE
-# ------------------------------------------
 
 with ref_col2:
 
@@ -280,11 +210,7 @@ with ref_col2:
     )
 
 
-# ==========================================
-# EDUCATIONAL SECTION
-# ==========================================
-
-with st.expander('🔬 What symptoms should I look for?'):
+with st.expander('What symptoms should I look for?'):
 
     st.markdown("""
 
@@ -326,11 +252,6 @@ with st.expander('🔬 What symptoms should I look for?'):
     - Active and healthy pod growth
 
     """)
-
-
-# ==========================================
-# FOOTER
-# ==========================================
 
 st.divider()
 
