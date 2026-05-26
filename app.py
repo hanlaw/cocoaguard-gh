@@ -41,13 +41,13 @@ st.divider()
 col3, col4, col5 = st.columns(3)
 
 with col3:
-    st.info("**AI Detection**\nUpload a photo for instant CSSVD diagnosis")
+    st.info("**AI Detection**\n\nUpload a photo for instant CSSVD diagnosis")
 
 with col4:
-    st.info("**Analytics**\nExplore dataset and model performance data")
+    st.info("**Analytics**\n\nExplore dataset and model performance data")
 
 with col5:
-    st.info("**Model Info**\nUnderstand how the AI model was built")
+    st.info("**Model Info**\n\nUnderstand how the AI model was built")
 
 st.divider()
 st.caption('Sankofa Intelligence | Ghana | 2026')
