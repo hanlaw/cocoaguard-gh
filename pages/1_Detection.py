@@ -253,7 +253,7 @@ ref_col1, ref_col2 = st.columns(2)
 with ref_col1:
 
     st.image(
-        'assets/sample_healthy.jpg',
+        'assets/sample_healthy.jpeg',
         caption=(
             '✅ Healthy Cocoa Plant — '
             'Even green colour, normal leaf shape, '
@@ -270,7 +270,7 @@ with ref_col1:
 with ref_col2:
 
     st.image(
-        'assets/sample_cssvd.jpg',
+        'assets/sample_cssvd.jpeg',
         caption=(
             '🚨 CSSVD Infected Plant — '
             'Mosaic patterns, vein banding, '
